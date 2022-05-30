@@ -12,6 +12,6 @@
   "dependencies": {
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
-    "lf-filer": "^1.0.9"
+    "lf-filer": "^1.0.10"
   }
 }

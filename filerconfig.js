@@ -6,7 +6,8 @@ const filerConfig =  {
       credentials: {
         accessKeyId: process.env.DB_PROVIDER_ACCESS_KEY_ID,
         secretAccessKey: process.env.DB_PROVIDER_SECRET_ACCESS_KEY
-      }
+      },
+      tableName : process.env.TABLE_NAME
   },
   storageProvider: process.env.STORAGE_PROVIDER,
   storageProviderConfig: {
@@ -16,6 +17,14 @@ const filerConfig =  {
           bucket: process.env.STORAGE_PROVIDER_BUCKET 
   },
   extensions: process.env.EXTENSIONS,
-  maxFileSize: process.env.MAX_FILE_SIZE
+  maxFileSize: process.env.MAX_FILE_SIZE,
+  restrictions: {
+    // file upload restrictions
+    maxFileSizeInMB: 25,
+    restrictedExtensions: ['exe', 'pdf'],
+  },
+  logger: (message) => { console.log("Message from logger\n", message) }
 }
+
+
 export default filerConfig;
